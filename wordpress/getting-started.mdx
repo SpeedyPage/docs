@@ -1,0 +1,53 @@
+---
+title: Getting started with WordPress Hosting
+description: Purchase a WordPress Hosting plan, access cPanel, and log in to your WordPress dashboard on SpeedyPage.
+---
+
+SpeedyPage WordPress Hosting is optimised for WordPress with LiteSpeed Web Server, NVMe SSD storage, and Bunny CDN included on selected plans. This guide walks you through going from purchase to your first WordPress login.
+
+## Plan overview
+
+| | Starter | Premium | Enterprise |
+| --- | --- | --- | --- |
+| Memory | 2 GB | 3 GB | 5 GB |
+| CPU cores | 1 | 2 | 3 |
+
+All plans include LiteSpeed Web Server, NVMe SSD storage, and unlimited I/O. See [Hosting resource limits](/web-hosting/resource-limits) for the full comparison.
+
+## Set up your WordPress site
+
+<Steps>
+  <Step title="Purchase a plan">
+    Visit [speedypage.com](https://speedypage.com) and choose a WordPress Hosting plan. Complete the order form and payment. You'll receive a welcome email with your cPanel credentials.
+  </Step>
+  <Step title="Log in to cPanel">
+    Go to [my.speedypage.com](https://my.speedypage.com), click **Services**, select your WordPress Hosting plan, and click **Log in to cPanel**.
+
+    You can also access cPanel directly at `yourdomain.com/cpanel`.
+  </Step>
+  <Step title="Verify WordPress is installed">
+    WordPress is typically pre-installed on new WordPress Hosting plans. Check your welcome email for the WordPress admin URL, username, and password.
+
+    If WordPress was not pre-installed, open cPanel and launch **Softaculous Apps Installer**. Select **WordPress**, click **Install**, fill in your site details, and click **Install** again.
+  </Step>
+  <Step title="Log in to WordPress">
+    Visit your WordPress admin dashboard at:
+
+    ```text
+    yourdomain.com/wp-admin
+    ```
+
+    Log in with the credentials from your welcome email or the ones you set during installation.
+  </Step>
+</Steps>
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="LiteSpeed Cache" href="/wordpress/litespeed-cache">
+    Configure caching and performance optimisation for your WordPress site.
+  </Card>
+  <Card title="Access cPanel" href="/getting-started/cpanel">
+    Learn more about navigating cPanel and its features.
+  </Card>
+</CardGroup>

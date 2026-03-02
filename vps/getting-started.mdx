@@ -1,0 +1,67 @@
+---
+title: Getting started with VirtFusion
+description: Log in to VirtFusion and manage your SpeedyPage VPS — power controls, console access, OS reinstall, and network settings.
+---
+
+VirtFusion is SpeedyPage's VPS control panel. It provides server management tools including power controls, console access, OS installation, network configuration, and resource monitoring.
+
+## Access VirtFusion
+
+<Steps>
+  <Step title="Log in to the client area">
+    Go to [my.speedypage.com](https://my.speedypage.com) and log in with your account credentials.
+  </Step>
+  <Step title="Open your VPS">
+    Click **Services** and select your VPS server.
+  </Step>
+  <Step title="Launch VirtFusion">
+    Click **Manage**. This opens the VirtFusion dashboard for your server.
+  </Step>
+</Steps>
+
+## VirtFusion dashboard overview
+
+The dashboard gives you access to:
+
+- **Power controls** — start, stop, restart, and graceful shutdown
+- **Console access** — browser-based VNC/noVNC console for direct server access
+- **OS reinstall** — wipe and reinstall the operating system from available templates
+- **Network settings** — view IP addresses, configure rDNS, and manage network interfaces
+- **Resource usage** — graphs showing CPU, memory, disk, and bandwidth usage
+- **Backups** — create and restore backups (if enabled on your plan)
+- **ISO mounting** — mount custom ISO images for manual OS installation
+
+## Key actions
+
+### Access the console
+
+From the VirtFusion dashboard, click **Console** to open a browser-based VNC session. This gives you direct terminal access to your server, which is useful when SSH is unavailable — for example, during initial setup or if you've locked yourself out with a firewall misconfiguration.
+
+### Check IP and network information
+
+Go to the **Network** tab to view your server's IP addresses, gateway, and subnet mask. You'll need these details when configuring network interfaces manually or setting up DNS records.
+
+### Reinstall the operating system
+
+Under **Reinstall**, select a new operating system template and confirm. This wipes the server and performs a fresh installation.
+
+<Warning>
+Reinstalling the OS permanently destroys all data on the server. Back up anything you need before proceeding.
+</Warning>
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Available operating systems" href="/vps/operating-systems">
+    See the full list of supported Linux distributions, FreeBSD, and Windows Server.
+  </Card>
+  <Card title="Configure rDNS" href="/vps/rdns">
+    Set up reverse DNS records for your server's IP addresses.
+  </Card>
+  <Card title="VPS backups" href="/vps/backups">
+    Enable automated off-site backups for your VPS.
+  </Card>
+  <Card title="Configure a firewall" href="/vps/firewall">
+    Set up UFW or firewalld to secure your server.
+  </Card>
+</CardGroup>

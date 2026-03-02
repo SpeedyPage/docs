@@ -1,0 +1,56 @@
+---
+title: Free migrations
+description: How to request a free same-day migration from your current cPanel host to SpeedyPage.
+---
+
+SpeedyPage offers free same-day migrations from cPanel-based hosts. The support team handles the entire process so you can move to SpeedyPage with minimal effort.
+
+## What gets migrated
+
+- Website files and directories
+- MySQL and PostgreSQL databases
+- Email accounts and mailbox contents
+- cPanel settings and configurations
+- Cron jobs
+
+<Note>
+Free migrations are available from cPanel-based hosts only. If your current host uses a different control panel, contact support to discuss your options.
+</Note>
+
+## Request a migration
+
+<Steps>
+  <Step title="Open a support ticket">
+    Log in to [my.speedypage.com](https://my.speedypage.com) and open a support ticket requesting a migration.
+  </Step>
+  <Step title="Provide your current hosting details">
+    Include the following information from your current host:
+
+    - cPanel URL (e.g., `yourdomain.com/cpanel`)
+    - cPanel username
+    - cPanel password
+    - List of domains to migrate (if you have more than one)
+  </Step>
+  <Step title="Wait for completion">
+    The support team will begin your migration and notify you when it's complete. Most migrations are completed the same day.
+  </Step>
+  <Step title="Verify your site">
+    Before switching DNS, preview your site on SpeedyPage to confirm everything transferred correctly. The support team can provide a temporary URL for testing.
+  </Step>
+  <Step title="Update your nameservers">
+    Once you've verified everything, update your domain's nameservers to point to SpeedyPage:
+
+    | Nameserver | Hostname |
+    | --- | --- |
+    | Primary | `ns1.speedy.page` |
+    | Secondary | `ns2.speedy.page` |
+  </Step>
+</Steps>
+
+<Warning>
+Do not update your nameservers until the migration is complete and you've verified your site. Switching DNS early will cause downtime.
+</Warning>
+
+## Timeline
+
+Most migrations are completed within the same business day. Larger accounts with many domains or large databases may take longer. The support team will keep you updated throughout the process.

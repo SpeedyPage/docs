@@ -1,0 +1,53 @@
+---
+title: Transfer a domain
+description: How to transfer an existing domain from another registrar to SpeedyPage.
+---
+
+You can transfer a domain from another registrar to SpeedyPage through the client area. Transfers usually complete within 5-7 days.
+
+## Before you start
+
+Your domain must meet these requirements before you can transfer it:
+
+- **Registered for more than 60 days** — ICANN requires domains to be at least 60 days old before transferring
+- **Not transferred in the last 60 days** — if you recently transferred the domain to another registrar, you must wait 60 days
+- **Unlocked** — the domain must not have a transfer lock enabled
+- **You have the EPP/auth code** — this is a unique code from your current registrar that authorizes the transfer
+
+## Prepare your domain at the current registrar
+
+1. Log in to your current registrar's control panel
+2. Disable the transfer lock (sometimes called "domain lock" or "registrar lock")
+3. Obtain the EPP code (also called an authorization code or auth code) — this is usually available in your registrar's domain management settings or can be requested from their support team
+
+## Transfer your domain
+
+<Steps>
+  <Step title="Log in to the client area">
+    Go to [my.speedypage.com](https://my.speedypage.com) and log in with your account credentials.
+  </Step>
+  <Step title="Start a domain transfer">
+    Click **Domains** → **Transfer a Domain to Us**.
+  </Step>
+  <Step title="Enter your domain">
+    Type the domain name you want to transfer and click **Search**.
+  </Step>
+  <Step title="Enter the EPP code">
+    Enter the EPP/authorization code from your current registrar.
+  </Step>
+  <Step title="Complete checkout">
+    Review your order and complete the checkout process. Domain transfers include a one-year renewal added to your current expiry date.
+  </Step>
+</Steps>
+
+<Note>
+After you complete checkout, your current registrar will send a confirmation email to the domain's admin contact. You may need to approve the transfer through that email. If the transfer is not rejected, it completes automatically within 5-7 days.
+</Note>
+
+## After the transfer
+
+Once the transfer completes:
+
+- Your domain is managed through the SpeedyPage client area
+- Nameservers are preserved from the previous registrar — update them to `ns1.speedy.page` and `ns2.speedy.page` if you want to use SpeedyPage hosting. See [Anycast nameservers](/web-hosting/nameservers) for details.
+- DNS records continue to resolve as before until you make changes

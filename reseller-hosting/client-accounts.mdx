@@ -1,0 +1,96 @@
+---
+title: Create and manage client accounts
+description: How to create cPanel accounts for your clients, manage packages, and handle account changes in WHM.
+---
+
+Each client on your Reseller Hosting plan gets their own cPanel account. You create and manage these accounts through WHM (Web Host Manager).
+
+<Tip>
+Create your hosting packages first. Go to **Packages** → **Add a Package** in WHM to define resource limits before creating client accounts. This lets you assign a package during account creation instead of configuring limits manually each time.
+</Tip>
+
+## Create a hosting package
+
+<Steps>
+  <Step title="Open Add a Package">
+    In WHM, go to **Packages** → **Add a Package**.
+  </Step>
+  <Step title="Configure the package">
+    Set the resource limits for this package:
+
+    - **Package Name** — a descriptive name (e.g., "Basic", "Business", "Pro")
+    - **Disk Quota** — maximum storage in MB
+    - **Bandwidth** — monthly bandwidth limit
+    - **Max Email Accounts** — number of email accounts allowed
+    - **Max Databases** — number of MySQL databases allowed
+    - **Max Addon Domains** — number of additional domains the client can add
+  </Step>
+  <Step title="Save the package">
+    Click **Add** to create the package.
+  </Step>
+</Steps>
+
+## Create a client account
+
+<Steps>
+  <Step title="Open Create a New Account">
+    In WHM, go to **Account Functions** → **Create a New Account**.
+  </Step>
+  <Step title="Fill in the account details">
+    Enter the following:
+
+    - **Domain** — the client's primary domain name
+    - **Username** — a cPanel username for the client (auto-generated from the domain, or set manually)
+    - **Password** — set a password for the client's cPanel login
+    - **Email** — the client's contact email address
+    - **Package** — select a hosting package from the dropdown
+  </Step>
+  <Step title="Create the account">
+    Click **Create** at the bottom of the page. WHM creates the cPanel account and sets up the domain.
+  </Step>
+</Steps>
+
+<Note>
+The client can now log in to cPanel at `theirdomain.com/cpanel` using the username and password you set.
+</Note>
+
+## Manage existing accounts
+
+### Change a client's package
+
+1. In WHM, go to **Account Functions** → **Upgrade/Downgrade an Account**
+2. Select the account from the list
+3. Choose the new package from the dropdown
+4. Click **Upgrade/Downgrade**
+
+### Modify account quotas
+
+To adjust an individual account's limits without changing its package:
+
+1. Go to **Account Functions** → **Modify an Account**
+2. Select the account
+3. Adjust the resource limits as needed
+4. Click **Save**
+
+### Suspend an account
+
+1. Go to **Account Functions** → **Suspend/Unsuspend an Account**
+2. Select the account to suspend
+3. Enter an optional reason for the suspension
+4. Click **Suspend**
+
+The client loses access to cPanel and their website goes offline. You can unsuspend the account at any time from the same page.
+
+### Terminate an account
+
+<Warning>
+Terminating an account permanently deletes all files, databases, and email accounts associated with it. This action cannot be undone.
+</Warning>
+
+1. Go to **Account Functions** → **Terminate an Account**
+2. Select the account
+3. Confirm the termination
+
+## View all accounts
+
+To see a list of all client accounts on your reseller plan, go to **Account Functions** → **List Accounts** in WHM. This shows each account's domain, username, package, disk usage, and bandwidth usage.

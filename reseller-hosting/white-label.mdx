@@ -1,0 +1,52 @@
+---
+title: White-label branding
+description: How to customize cPanel and WHM with your own branding on SpeedyPage Reseller Hosting.
+---
+
+SpeedyPage Reseller Hosting is fully white-label. Your clients see your brand throughout cPanel — not SpeedyPage. This lets you offer hosting under your own business name.
+
+## What white-label means
+
+When a client logs in to cPanel, they see:
+
+- Your company name and logo
+- Your custom branding and color scheme
+- No reference to SpeedyPage
+
+Your clients interact with your brand only. SpeedyPage operates as the infrastructure behind the scenes.
+
+## Customize cPanel branding
+
+<Steps>
+  <Step title="Log in to WHM">
+    Access WHM through your [client area](https://my.speedypage.com) or by visiting `yourdomain.com/whm`. See [Getting started with WHM](/reseller-hosting/getting-started) for details.
+  </Step>
+  <Step title="Open cPanel Customization">
+    In WHM, go to **cPanel** → **Customization**.
+  </Step>
+  <Step title="Upload your branding">
+    Customize the following:
+
+    - **Company name** — displayed in the cPanel header and footer
+    - **Logo** — your company logo shown in the cPanel interface
+    - **Documentation URL** — link to your own help documentation (optional)
+    - **Support URL** — link to your own support portal (optional)
+  </Step>
+  <Step title="Save your changes">
+    Click **Save** to apply the branding. Changes take effect immediately for all client cPanel accounts.
+  </Step>
+</Steps>
+
+## Use your own domain for WHM and cPanel access
+
+By default, clients access cPanel through your primary reseller domain. If you want clients to access cPanel through a branded URL (e.g., `cpanel.yourbrand.com`), you can set this up using DNS.
+
+Create a CNAME or A record pointing your custom hostname to your reseller server. Your clients can then access cPanel at `yourbrand.com/cpanel` instead of the default hostname.
+
+## Set up custom nameservers
+
+By default, your clients' domains use SpeedyPage's nameservers (`ns1.speedy.page` and `ns2.speedy.page`). For full white-label branding, you can use custom nameservers under your own domain (e.g., `ns1.yourbrand.com` and `ns2.yourbrand.com`).
+
+<Note>
+Custom nameservers require DNS configuration on SpeedyPage's side. [Contact support](https://speedypage.com/contact) to set up custom nameservers for your reseller account.
+</Note>

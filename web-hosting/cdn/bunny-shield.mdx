@@ -1,0 +1,48 @@
+---
+title: Bunny Shield
+description: How Bunny Shield protects your site with WAF, DDoS mitigation, rate limiting, and bot protection through SpeedyPage CDN.
+---
+
+Bunny Shield is the security layer of SpeedyPage CDN, providing protection against web attacks, DDoS threats, and malicious bots. It operates at the CDN edge, filtering traffic before it reaches your origin server.
+
+Bunny Shield is enabled through the CDN configuration in cPanel. Once the CDN is active on your domain, Bunny Shield protections apply automatically.
+
+## AI-powered WAF
+
+The web application firewall analyzes incoming requests using machine learning models trained on real attack data. It blocks common attack vectors including SQL injection, cross-site scripting (XSS), remote code execution, and path traversal — without requiring manual rule configuration.
+
+The WAF updates its rulesets automatically to respond to emerging threats.
+
+## DDoS protection
+
+Distributed denial-of-service attacks are mitigated across 119 scrubbing centers worldwide. Traffic is analyzed and filtered at the edge, absorbing volumetric attacks before they can overwhelm your origin server.
+
+Protection covers both Layer 3/4 (network-level) and Layer 7 (application-level) attacks.
+
+## Rate limiting
+
+Global rate limiting controls the number of requests a single client can make within a given time window. This prevents abuse patterns such as:
+
+- Brute force login attempts
+- API endpoint flooding
+- Credential stuffing attacks
+- Resource exhaustion through rapid repeated requests
+
+## Bot mitigation
+
+Bunny Shield identifies and filters malicious bot traffic while allowing legitimate bots (such as search engine crawlers) through. Detection uses a combination of behavioral analysis, fingerprinting, and challenge mechanisms.
+
+## Zero-day and exploit protection
+
+The WAF includes heuristic detection that can identify and block previously unknown attack patterns. This provides a layer of defense against zero-day vulnerabilities in web applications, even before specific patches or rules are available.
+
+## How to enable Bunny Shield
+
+Bunny Shield is part of SpeedyPage CDN. To get started:
+
+1. Set up the CDN on your domain by following the [CDN setup guide](/web-hosting/cdn/setup)
+2. Bunny Shield protections are enabled automatically once the CDN is active
+
+<Note>
+Bunny Shield operates at the CDN edge and works independently of server-level security like Imunify360. Both layers complement each other for defense in depth.
+</Note>

@@ -1,0 +1,92 @@
+---
+title: Manage DNS records
+description: How to add and edit DNS records using the Zone Editor in cPanel.
+---
+
+If your domain uses SpeedyPage nameservers (`ns1.speedy.page` and `ns2.speedy.page`), you manage DNS records through cPanel's Zone Editor.
+
+<Note>
+If your domain uses an external DNS provider (e.g., Cloudflare, your registrar's DNS), manage DNS records at that provider instead of in cPanel.
+</Note>
+
+## DNS record types
+
+| Record type | Purpose | Example |
+| --- | --- | --- |
+| A | Points a domain or subdomain to an IPv4 address | `example.com` → `203.0.113.10` |
+| AAAA | Points a domain or subdomain to an IPv6 address | `example.com` → `2001:db8::1` |
+| CNAME | Creates an alias pointing to another domain | `www.example.com` → `example.com` |
+| MX | Routes email to a mail server | `example.com` → `mail.example.com` (priority 10) |
+| TXT | Stores text data for verification, SPF, DKIM, and other purposes | `v=spf1 +a +mx ~all` |
+
+## Access the Zone Editor
+
+1. Log in to cPanel through your [client area](https://my.speedypage.com) or by visiting `yourdomain.com/cpanel`
+2. In the **Domains** section, click **Zone Editor**
+3. Find your domain in the list and click **Manage**
+
+## Add a DNS record
+
+This example walks through adding an A record. The process is similar for other record types.
+
+<Steps>
+  <Step title="Open the Zone Editor">
+    In cPanel, go to **Domains** → **Zone Editor** and click **Manage** next to your domain.
+  </Step>
+  <Step title="Add a record">
+    Click **Add Record**. A new row appears at the top of the record list.
+  </Step>
+  <Step title="Configure the record">
+    Fill in the following fields:
+
+    - **Name** — the hostname (e.g., `example.com` for the root domain, or `sub.example.com` for a subdomain)
+    - **TTL** — time to live in seconds (default `14400` is fine for most cases)
+    - **Type** — select **A** from the dropdown
+    - **Record** — the IPv4 address to point to (e.g., `203.0.113.10`)
+  </Step>
+  <Step title="Save the record">
+    Click **Save Record**. The DNS change propagates within the TTL period.
+  </Step>
+</Steps>
+
+## Edit or delete a record
+
+From the Zone Editor:
+
+- Click **Edit** next to a record to modify its value, TTL, or type
+- Click **Delete** to remove a record
+
+<Warning>
+Be careful when editing or deleting MX records. Incorrect MX records will prevent your domain from receiving email.
+</Warning>
+
+## Common DNS configurations
+
+<AccordionGroup>
+  <Accordion title="Point your domain to a SpeedyPage hosting account">
+    Create an A record for your root domain (`example.com`) pointing to your hosting account's IP address. You can find your IP address in cPanel under **Server Information** or on the right-hand sidebar of the cPanel home page.
+
+    Also create a CNAME record for `www.example.com` pointing to `example.com` so both versions work.
+  </Accordion>
+  <Accordion title="Set up email routing with MX records">
+    MX records tell other mail servers where to deliver email for your domain. If you're using SpeedyPage's email, the MX record is configured automatically.
+
+    To use an external email provider (e.g., Google Workspace, Microsoft 365), delete the existing MX records and add the records provided by your email provider.
+  </Accordion>
+  <Accordion title="Add a TXT record for domain verification">
+    Services like Google Search Console, Microsoft 365, and others often require a TXT record to verify domain ownership. Add a TXT record with the **Name** set to your domain and the **Record** set to the verification string provided by the service.
+  </Accordion>
+  <Accordion title="Set up SPF for email authentication">
+    An SPF record tells receiving mail servers which IP addresses are authorized to send email for your domain. For SpeedyPage hosting, the recommended SPF record is:
+
+    ```text
+    v=spf1 +a +mx include:_spf.mailchannels.net ~all
+    ```
+
+    Add this as a TXT record with the **Name** set to your domain.
+  </Accordion>
+</AccordionGroup>
+
+<Tip>
+DNS changes can take up to 24-48 hours to fully propagate worldwide, though most changes are visible within a few hours. The actual time depends on the TTL of the previous record and caching by DNS resolvers.
+</Tip>

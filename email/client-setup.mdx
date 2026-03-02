@@ -1,0 +1,63 @@
+---
+title: Configure email clients
+description: IMAP, POP3, and SMTP settings for connecting your SpeedyPage email to desktop and mobile email clients.
+---
+
+Use the settings below to connect your SpeedyPage email account to any desktop or mobile email client.
+
+## Email server settings
+
+Replace `yourdomain.com` with your actual domain name in the server addresses below.
+
+| Setting | Value |
+| --- | --- |
+| **Incoming server (IMAP)** | `mail.yourdomain.com` |
+| **IMAP port** | 993 |
+| **Incoming server (POP3)** | `mail.yourdomain.com` |
+| **POP3 port** | 995 |
+| **Outgoing server (SMTP)** | `mail.yourdomain.com` |
+| **SMTP port** | 465 |
+| **Encryption** | SSL/TLS (all connections) |
+| **Username** | Your full email address (e.g., `you@yourdomain.com`) |
+| **Password** | Your email account password |
+
+<Note>
+IMAP keeps your email synced across all devices. POP3 downloads messages to a single device and removes them from the server by default. Use IMAP unless you have a specific reason to use POP3.
+</Note>
+
+## Client-specific instructions
+
+<AccordionGroup>
+  <Accordion title="Microsoft Outlook">
+    1. Go to **File** → **Add Account**
+    2. Enter your full email address and click **Connect**
+    3. Select **IMAP** when prompted for the account type
+    4. Enter the incoming and outgoing server settings from the table above
+    5. Enter your password and click **Connect**
+
+    Outlook may auto-detect settings. If it does, verify the server and port values match the table above before proceeding.
+  </Accordion>
+
+  <Accordion title="Apple Mail">
+    1. Open **Mail** → **Settings** (or **Preferences**) → **Accounts**
+    2. Click the **+** button to add a new account
+    3. Select **Other Mail Account** and click **Continue**
+    4. Enter your name, full email address, and password
+    5. If automatic setup fails, enter the server settings manually using the values from the table above
+    6. Select **IMAP** as the account type
+  </Accordion>
+
+  <Accordion title="Mozilla Thunderbird">
+    1. Open **Account Settings** → **Account Actions** → **Add Mail Account**
+    2. Enter your name, full email address, and password
+    3. Click **Configure manually**
+    4. Set the incoming server to `mail.yourdomain.com`, protocol **IMAP**, port **993**, SSL/TLS
+    5. Set the outgoing server to `mail.yourdomain.com`, port **465**, SSL/TLS
+    6. Set the authentication method to **Normal password**
+    7. Click **Done**
+  </Accordion>
+</AccordionGroup>
+
+<Tip>
+You can find these settings in cPanel as well. Go to **Email Accounts**, click **Connect Devices** next to the account, and cPanel will display the server details and auto-configuration scripts.
+</Tip>

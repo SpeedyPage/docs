@@ -1,0 +1,63 @@
+---
+title: LiteSpeed Cache for WordPress
+description: How to install and configure the LiteSpeed Cache plugin on SpeedyPage WordPress Hosting.
+---
+
+SpeedyPage runs LiteSpeed Web Server on all WordPress Hosting plans. This means the [LiteSpeed Cache](https://wordpress.org/plugins/litespeed-cache/) plugin works at full capability — server-level page caching, not emulated. The plugin also handles image optimisation, CSS/JS minification, and browser caching.
+
+## Install LiteSpeed Cache
+
+The plugin may already be pre-installed on your WordPress site. If not, install it manually:
+
+<Steps>
+  <Step title="Open the plugins page">
+    Log in to your WordPress dashboard and go to **Plugins** → **Add New**.
+  </Step>
+  <Step title="Search and install">
+    Search for **LiteSpeed Cache**, then click **Install Now** and **Activate**.
+  </Step>
+</Steps>
+
+## Configure key settings
+
+After activation, go to **LiteSpeed Cache** in the WordPress sidebar. The settings below give you a solid starting configuration.
+
+### Page cache
+
+Navigate to **LiteSpeed Cache** → **Cache** and set **Enable Cache** to **ON**. This is the most impactful setting — it tells LiteSpeed to serve cached HTML pages directly from the server without executing PHP on every request.
+
+### Object cache
+
+Go to **LiteSpeed Cache** → **Cache** → **Object** and set **Object Cache** to **ON** if your plan includes Redis or Memcached. Object caching stores database query results in memory, reducing load on MySQL for dynamic content.
+
+<Note>
+Object cache availability depends on your hosting plan. Check your cPanel for Redis or Memcached options.
+</Note>
+
+### Browser cache
+
+Navigate to **LiteSpeed Cache** → **Cache** → **Browser** and set **Browser Cache** to **ON**. This instructs visitors' browsers to store static assets locally, reducing repeat page load times.
+
+### Image optimisation
+
+Go to **LiteSpeed Cache** → **Image Optimization**. Key features to enable:
+
+- **Lazy Load** — defers loading of off-screen images until the visitor scrolls to them
+- **WebP Conversion** — automatically serves images in WebP format for browsers that support it, reducing file sizes
+
+### CSS/JS optimisation
+
+Under **LiteSpeed Cache** → **Page Optimization**, you can enable:
+
+- **CSS Minify** and **JS Minify** — remove whitespace and comments from code files
+- **CSS Combine** and **JS Combine** — merge multiple files into fewer requests
+
+<Tip>
+Enable minification and combination one at a time, then check your site for visual or functional issues before enabling the next option. Some themes and plugins don't handle combined files well.
+</Tip>
+
+## Avoid conflicts with other caching plugins
+
+<Warning>
+Do not run multiple caching plugins simultaneously (for example, LiteSpeed Cache alongside WP Super Cache or W3 Total Cache). They will conflict with each other and can cause stale content, broken pages, or performance degradation. Deactivate and remove any other caching plugins before configuring LiteSpeed Cache.
+</Warning>

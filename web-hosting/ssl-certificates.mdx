@@ -1,0 +1,50 @@
+---
+title: SSL certificates
+description: How to provision free SSL certificates with AutoSSL, troubleshoot common issues, and install custom certificates in cPanel.
+---
+
+All SpeedyPage Web Hosting plans include free SSL certificates through AutoSSL, powered by Sectigo. AutoSSL automatically provisions and renews certificates for every domain and subdomain on your account.
+
+## Check your SSL status
+
+1. Log in to cPanel through your [client area](https://my.speedypage.com) or by visiting `yourdomain.com/cpanel`
+2. Go to the **Security** section and click **SSL/TLS Status**
+3. Review the list of domains — a green padlock indicates an active certificate
+
+## Run AutoSSL manually
+
+AutoSSL runs automatically, but you can trigger it on demand if a certificate hasn't been provisioned yet.
+
+1. In cPanel, go to **SSL/TLS Status**
+2. Click **Run AutoSSL**
+3. Wait for the process to complete — this usually takes a few minutes
+
+<Note>
+AutoSSL checks run periodically and will automatically provision certificates for new domains. Manual runs are only needed if you want to speed up the process.
+</Note>
+
+## Troubleshoot AutoSSL failures
+
+If AutoSSL fails to issue a certificate, check the following:
+
+- **DNS is pointing to SpeedyPage** — your domain must resolve to your hosting account. Ensure your nameservers are set to `ns1.speedy.page` and `ns2.speedy.page`. See [nameserver setup](/web-hosting/nameservers) for details.
+- **No conflicting DNS records** — CAA records can block certificate issuance. If you have CAA records, add one for `sectigo.com`.
+- **Domain is reachable** — the domain must respond on port 80 for validation to succeed. Ensure no firewall rules or redirects are blocking access.
+
+<Warning>
+AutoSSL cannot issue certificates for domains that don't resolve to your SpeedyPage hosting account. If you're using external DNS, create the correct A record pointing to your server's IP address.
+</Warning>
+
+## Install a custom SSL certificate
+
+If you have a certificate from another provider, you can install it manually.
+
+1. In cPanel, go to the **Security** section and click **SSL/TLS**
+2. Click **Install and Manage SSL for your sites (HTTPS)**
+3. Select the domain from the dropdown
+4. Paste your certificate (CRT), private key, and certificate authority bundle (CABUNDLE) into the corresponding fields
+5. Click **Install Certificate**
+
+<Tip>
+Custom certificates take priority over AutoSSL. If you later remove a custom certificate, AutoSSL will automatically provision a replacement.
+</Tip>

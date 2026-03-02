@@ -1,0 +1,42 @@
+---
+title: Purge CDN cache
+description: How to clear the BunnyCDN cache from cPanel when you need to force-refresh your site's cached content.
+---
+
+When your site's content is cached on the CDN, visitors see the cached version until it expires based on TTL (time-to-live) settings. If you've made changes that need to appear immediately, you can manually purge the cache.
+
+## When to purge
+
+Common reasons to purge the CDN cache:
+
+- You've updated your site's design, CSS, or JavaScript files
+- You've corrected content errors that need to appear immediately
+- Cached pages are showing outdated information
+- You've made changes to images that aren't reflected on the live site
+
+## Purge the cache
+
+1. Log in to cPanel through your [client area](https://my.speedypage.com) or by visiting `yourdomain.com/cpanel`
+2. Go to the **Domains** section and find the **bunny.net** icon
+3. Select your domain
+4. Click **Purge Cache**
+
+### Purge options
+
+- **Purge all** — clears the entire cache for your domain across all CDN edge servers. Use this when you've made widespread changes.
+- **Purge by URL** — clears the cache for specific URLs only. Use this for targeted changes where you don't want to reset the entire cache.
+
+<Note>
+After a full purge, the first visitor to each page will experience slightly longer load times as the CDN fetches fresh content from your origin server and rebuilds the cache.
+</Note>
+
+## Cache expiration
+
+You don't always need to purge manually. The CDN cache expires automatically based on TTL settings:
+
+- **Default TTL** — content is cached for a set duration and refreshed automatically when it expires
+- **Origin headers** — if your site sends `Cache-Control` or `Expires` headers, the CDN respects those values
+
+<Tip>
+For sites with frequent updates, consider using versioned filenames for CSS and JavaScript (e.g., `style.v2.css`). This ensures visitors get new files immediately without a cache purge.
+</Tip>

@@ -1,0 +1,51 @@
+---
+title: Imunify360 security
+description: How Imunify360 protects your SpeedyPage hosting account with real-time malware scanning, firewall protection, and automatic cleanup.
+---
+
+Imunify360 is included on all SpeedyPage Web Hosting, WordPress Hosting, and Reseller Hosting plans. It provides automated server-level security that runs continuously without any configuration needed from you.
+
+## What Imunify360 does
+
+Imunify360 provides multiple layers of protection:
+
+- **Real-time malware scanning** — files are scanned as they're uploaded or modified, catching threats immediately
+- **Automatic malware cleanup** — detected malware is automatically quarantined or cleaned without manual intervention
+- **Proactive defense** — PHP scripts are analyzed at runtime to block malicious behavior before it can execute
+- **Firewall protection** — an intelligent firewall blocks known attack patterns, brute force attempts, and suspicious IPs
+- **Intrusion detection** — monitors system logs and file changes to identify unauthorized access attempts
+
+## View threats and scan results
+
+1. Log in to cPanel through your [client area](https://my.speedypage.com) or by visiting `yourdomain.com/cpanel`
+2. Go to the **Security** section and click **Imunify360**
+
+The dashboard shows:
+
+- **Files** — a list of detected threats with their status (cleaned, quarantined, or infected)
+- **History** — a log of all security events on your account
+- **Ignore List** — files excluded from scanning (use with caution)
+
+## Run a manual scan
+
+Imunify360 scans files automatically, but you can trigger a scan on demand:
+
+1. In the Imunify360 dashboard, go to the **Files** tab
+2. Click **Start Scan**
+3. Review the results once the scan completes
+
+<Note>
+Manual scans check all files in your home directory. Detected threats are handled automatically based on the server's security policy.
+</Note>
+
+## Layered security
+
+Imunify360 works alongside other security measures on SpeedyPage servers:
+
+- **ModSecurity** — a web application firewall that filters malicious HTTP requests using regularly updated rulesets
+- **CloudLinux OS** — isolates each hosting account in its own environment, preventing compromised accounts from affecting others on the same server
+- **CageFS** — a virtualized filesystem that restricts each user's view of the server, hiding sensitive system files and other users' data
+
+<Tip>
+While Imunify360 provides strong automated protection, you should still follow security best practices: keep your applications updated, use strong passwords, and remove unused plugins or themes.
+</Tip>

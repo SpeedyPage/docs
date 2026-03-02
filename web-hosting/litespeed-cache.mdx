@@ -1,0 +1,73 @@
+---
+title: LiteSpeed Cache
+description: How LiteSpeed Cache works on SpeedyPage hosting and how to configure it for WordPress and non-WordPress sites.
+---
+
+SpeedyPage runs LiteSpeed Web Server on all Web Hosting, WordPress Hosting, and Reseller Hosting plans. LiteSpeed includes built-in page caching at the server level (LSCache), which serves cached content directly from the web server without executing PHP or querying your database.
+
+LSCache is already enabled server-side on your account. The configuration steps below let you fine-tune caching behavior for your specific site.
+
+## WordPress sites
+
+The LiteSpeed Cache for WordPress plugin gives you full control over caching, image optimization, CSS/JS minification, and more.
+
+1. Log in to your WordPress admin dashboard
+2. Go to **Plugins** and click **Add New**
+3. Search for **LiteSpeed Cache** and click **Install Now**, then **Activate**
+4. Go to **LiteSpeed Cache → Cache** in the sidebar to configure settings
+
+The default settings work for most sites. Key options to review:
+
+- **Cache** — enable or disable page caching (enabled by default)
+- **TTL** — how long cached pages are stored before they expire
+- **Purge** — configure which actions trigger a cache purge (e.g., publishing a post)
+- **Excludes** — URLs or query strings that should bypass the cache
+
+<Tip>
+For detailed WordPress-specific caching configuration, see the [WordPress LiteSpeed Cache guide](/wordpress/litespeed-cache).
+</Tip>
+
+## Non-WordPress sites
+
+For static sites, PHP applications, and other non-WordPress setups, you can control LSCache behavior through `.htaccess` rules.
+
+### Enable caching
+
+Add these directives to the `.htaccess` file in your site's document root:
+
+```apacheconf
+<IfModule LiteSpeed>
+  CacheLookup on
+  CacheEnable public /
+</IfModule>
+```
+
+### Set cache expiration
+
+Control how long content is cached:
+
+```apacheconf
+<IfModule LiteSpeed>
+  ExpiresActive On
+  ExpiresByType text/html "access plus 1 hour"
+  ExpiresByType text/css "access plus 1 week"
+  ExpiresByType image/png "access plus 1 month"
+  ExpiresByType image/jpeg "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 week"
+</IfModule>
+```
+
+### Exclude paths from caching
+
+Prevent specific URLs from being cached:
+
+```apacheconf
+<IfModule LiteSpeed>
+  RewriteEngine On
+  RewriteRule ^admin/ - [E=Cache-Control:no-cache]
+</IfModule>
+```
+
+<Note>
+LSCache operates at the server level and is significantly faster than PHP-based caching solutions. You don't need to install any additional caching software.
+</Note>

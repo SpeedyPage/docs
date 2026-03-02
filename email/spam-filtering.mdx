@@ -1,0 +1,59 @@
+---
+title: Configure spam filtering
+description: How to enable and configure SpamAssassin spam filtering in cPanel on your SpeedyPage hosting plan.
+---
+
+SpeedyPage includes SpamAssassin on all hosting plans. SpamAssassin scores incoming emails based on spam characteristics and filters messages that exceed a set threshold.
+
+## Enable SpamAssassin
+
+<Steps>
+  <Step title="Log in to cPanel">
+    Access cPanel through your [client area](https://my.speedypage.com) or by visiting `yourdomain.com/cpanel`.
+  </Step>
+  <Step title="Open Spam Filters">
+    In the **Email** section, click **Spam Filters**.
+  </Step>
+  <Step title="Enable SpamAssassin">
+    Toggle **Process New Emails and Mark them as Spam** to on.
+  </Step>
+</Steps>
+
+## Adjust the spam score threshold
+
+Every incoming email receives a spam score. The higher the score, the more likely the message is spam. The default threshold is **5** — any message scoring 5 or above is marked as spam.
+
+To change the threshold:
+
+1. On the **Spam Filters** page, click **Spam Threshold Score**
+2. Select a new score value
+3. Click **Update Scoring Options**
+
+| Score | Filtering level |
+| --- | --- |
+| 8-10 | Lenient — only the most obvious spam is caught |
+| 5 (default) | Balanced — catches most spam with few false positives |
+| 1-4 | Aggressive — catches more spam but may flag legitimate email |
+
+<Warning>
+Setting the score too low (1-2) can cause legitimate emails to be marked as spam. Start with the default of 5 and adjust gradually if needed.
+</Warning>
+
+## Auto-delete spam
+
+You can configure SpamAssassin to automatically delete messages that exceed the spam score threshold instead of delivering them to your spam folder:
+
+1. On the **Spam Filters** page, toggle **Automatically Delete New Spam (Auto-Delete)** to on
+2. Confirm the action when prompted
+
+<Warning>
+Auto-deleted messages cannot be recovered. Only enable this after you've confirmed the spam threshold is not flagging legitimate email.
+</Warning>
+
+## Spam box filtering
+
+When SpamAssassin is enabled without auto-delete, spam messages are delivered to a **spam** (or **junk**) folder in your mailbox. Check this folder periodically for false positives — legitimate messages that were incorrectly flagged.
+
+<Tip>
+If a specific sender's email is consistently marked as spam, you can add their address to the SpamAssassin whitelist in cPanel to ensure their messages are always delivered to your inbox.
+</Tip>

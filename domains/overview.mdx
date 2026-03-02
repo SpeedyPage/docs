@@ -1,8 +1,31 @@
 ---
 title: Domains
-description: Guides for registering, transferring, and managing domains with SpeedyPage.
+description: Register, transfer, and manage domains through your SpeedyPage client area.
 ---
 
-Domains documentation is coming soon. In the meantime, you can register and manage domains through the [client area](https://my.speedypage.com).
+SpeedyPage offers domain registration, transfers, and DNS management — all handled through the [client area](https://my.speedypage.com). You can register a new domain, transfer an existing one from another registrar, or manage DNS records for domains on your hosting plan.
 
-For help with domain registration, transfers, or DNS configuration, [contact our support team](https://speedypage.com/contact) — available 24/7.
+## Guides
+
+<CardGroup cols={2}>
+  <Card title="Register a domain" icon="circle-plus" href="/domains/register">
+    Search for and register a new domain name through the client area.
+  </Card>
+  <Card title="Transfer a domain" icon="arrow-right-arrow-left" href="/domains/transfer">
+    Move an existing domain from another registrar to SpeedyPage.
+  </Card>
+  <Card title="Manage DNS records" icon="server" href="/domains/dns-records">
+    Add and edit DNS records in cPanel's Zone Editor.
+  </Card>
+</CardGroup>
+
+## Nameservers
+
+If you're using SpeedyPage hosting, point your domain to:
+
+| Nameserver | Hostname |
+| --- | --- |
+| Primary | `ns1.speedy.page` |
+| Secondary | `ns2.speedy.page` |
+
+For more details, see [Anycast nameservers](/web-hosting/nameservers).

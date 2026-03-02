@@ -1,0 +1,48 @@
+---
+title: Image optimization
+description: How SpeedyPage CDN automatically optimizes images with compression, WebP/AVIF conversion, and lazy loading using Bunny Optimizer.
+---
+
+SpeedyPage CDN includes Bunny Optimizer, which automatically optimizes images and compresses assets as they pass through the CDN. This reduces page load times without requiring any code changes to your site.
+
+## What Bunny Optimizer does
+
+### Image compression
+
+Images are automatically compressed using lossy or lossless algorithms, reducing file sizes while maintaining visual quality. Compression is applied on the fly as images are served through the CDN.
+
+### Format conversion
+
+Images are automatically converted to modern formats based on browser support:
+
+- **WebP** — typically 25-35% smaller than JPEG with equivalent quality, supported by all modern browsers
+- **AVIF** — even smaller file sizes than WebP, supported by newer browser versions
+
+The original image format is served as a fallback for browsers that don't support newer formats. No changes to your HTML or image files are needed — the CDN handles format negotiation automatically.
+
+### Lazy loading
+
+Images below the fold are loaded only when they enter the viewport, rather than loading all images when the page first loads. This improves initial page load time and reduces bandwidth for visitors who don't scroll through the entire page.
+
+### CSS and JavaScript minification
+
+Bunny Optimizer also minifies CSS and JavaScript files by removing whitespace, comments, and unnecessary characters to reduce file sizes.
+
+### Brotli and Gzip compression
+
+Text-based assets (HTML, CSS, JavaScript, JSON, XML) are compressed using Brotli or Gzip before delivery. Brotli is preferred when the browser supports it, as it provides better compression ratios.
+
+## Access CDN settings
+
+1. Log in to cPanel through your [client area](https://my.speedypage.com) or by visiting `yourdomain.com/cpanel`
+2. Go to the **Domains** section and find the **bunny.net** icon
+3. Select your domain to open CDN configuration
+4. Adjust optimization settings as needed
+
+<Tip>
+The default optimization settings work for most sites. If you notice visual quality issues with images, you can adjust the compression level or disable specific optimizations through the CDN settings.
+</Tip>
+
+<Note>
+Image optimization requires an active CDN configuration. Follow the [CDN setup guide](/web-hosting/cdn/setup) to get started.
+</Note>

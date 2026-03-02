@@ -1,0 +1,40 @@
+---
+title: MailChannels email delivery
+description: How MailChannels outbound email delivery works on SpeedyPage Reseller Hosting plans.
+---
+
+All SpeedyPage Reseller Hosting plans include MailChannels for outbound email delivery. MailChannels routes all outgoing email from your cPanel accounts through their infrastructure, improving deliverability and reducing the risk of IP blacklisting.
+
+## How it works
+
+When an email is sent from any cPanel account on your reseller plan, it is automatically routed through MailChannels instead of being sent directly from the server's IP address. This happens at the server level — no configuration is needed from you or your clients.
+
+The process is:
+
+1. A cPanel account sends an email (through webmail, an email client, or a website contact form)
+2. The email is handed off to MailChannels
+3. MailChannels scans the email for spam and delivers it through their trusted IP infrastructure
+4. The recipient's mail server receives the email from MailChannels' IPs, which have high sender reputation
+
+## Benefits
+
+- **Improved inbox delivery rates** — MailChannels maintains a strong sender reputation, so emails are more likely to reach the inbox rather than the spam folder
+- **Reduced IP blacklisting risk** — email is sent from MailChannels' IP addresses, not your server's IP. If one account sends spam, it doesn't affect deliverability for other accounts
+- **Automatic outbound spam filtering** — MailChannels scans outgoing email and blocks messages identified as spam before they leave the network
+- **No configuration required** — MailChannels is enabled by default on all Reseller Hosting plans. Your clients don't need to change any email settings
+
+## SPF records
+
+For best deliverability, your clients' domains should include MailChannels in their SPF record. The correct SPF record is:
+
+```text
+v=spf1 +a +mx include:_spf.mailchannels.net ~all
+```
+
+<Note>
+SPF records are automatically configured for domains using SpeedyPage's nameservers. If a client uses external DNS, they need to add the MailChannels SPF include to their domain's TXT record at their DNS provider.
+</Note>
+
+## DKIM signing
+
+MailChannels supports DKIM signing for outbound email. DKIM records are configured automatically for domains hosted on your reseller account, adding an additional layer of email authentication alongside SPF.

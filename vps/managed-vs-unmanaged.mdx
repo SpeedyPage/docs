@@ -1,0 +1,60 @@
+---
+title: Managed and unmanaged VPS
+description: Understand the differences between managed and unmanaged VPS at SpeedyPage, and which option suits your needs.
+---
+
+All SpeedyPage VPS servers are **unmanaged by default**. You get root access and full control over the server, but you're responsible for maintaining it. Managed VPS is available as an add-on for customers who want hands-off server administration.
+
+## What's included
+
+| | Unmanaged (default) | Managed (add-on) |
+| --- | --- | --- |
+| Root/admin access | Yes | Yes |
+| OS installation | Self-service via VirtFusion | Handled by SpeedyPage |
+| OS and software updates | Your responsibility | Included |
+| cPanel installation | Your responsibility | Included and configured |
+| Security (CloudLinux, Imunify360) | Your responsibility | Included and configured |
+| Server monitoring | Not included | 24/7 monitoring |
+| Technical support scope | Infrastructure and network only | Server-level issues included |
+| Firewall configuration | Your responsibility | Included |
+| Backups configuration | Your responsibility | Assisted setup |
+
+## Unmanaged VPS
+
+With an unmanaged VPS, SpeedyPage provides the server infrastructure — hardware, network, and power. Everything above the hypervisor is your responsibility:
+
+- Installing and updating the operating system
+- Configuring software and services
+- Securing the server (firewall, fail2ban, access controls)
+- Monitoring uptime and performance
+- Troubleshooting application and OS-level issues
+
+SpeedyPage support covers infrastructure and network issues (hardware faults, network outages, IP assignments) but does not assist with OS configuration, software installation, or troubleshooting your applications.
+
+## Managed VPS
+
+The managed add-on extends SpeedyPage support to cover server-level administration:
+
+- **cPanel installation and configuration** — fully set up and ready to use
+- **CloudLinux** — resource isolation and stability for multi-tenant environments
+- **Imunify360** — proactive security scanning, firewall, and malware protection
+- **OS and software updates** — regular patching and maintenance
+- **Server monitoring** — 24/7 monitoring with proactive response
+- **Technical support** — assistance with server-level issues beyond basic infrastructure
+
+<Note>
+Managed VPS support covers the server environment. Application-specific issues (WordPress plugin conflicts, custom code debugging, etc.) remain your responsibility.
+</Note>
+
+## Which option is right for you
+
+<CardGroup cols={2}>
+  <Card title="Unmanaged">
+    A good fit if you're a developer or sysadmin comfortable with Linux server administration. You want full control and prefer to handle configuration, security, and updates yourself.
+  </Card>
+  <Card title="Managed">
+    A good fit if you need VPS resources but don't want to handle day-to-day server management. Common for business owners running cPanel-based hosting who want SpeedyPage to handle the server layer.
+  </Card>
+</CardGroup>
+
+To add managed support to an existing VPS, open a ticket at [my.speedypage.com](https://my.speedypage.com) or contact support.

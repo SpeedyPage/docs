@@ -13,7 +13,10 @@
       {
         "group": "Getting started",
         "pages": [
-          "index"
+          "index",
+          "getting-started/speedypage",
+          "getting-started/cpanel",
+          "getting-started/migrations"
         ]
       },
       {
@@ -26,44 +29,82 @@
         "group": "Web Hosting",
         "pages": [
           "web-hosting/nameservers",
+          "web-hosting/ssl-certificates",
           "web-hosting/php-version",
+          "web-hosting/litespeed-cache",
+          "web-hosting/softaculous",
+          "web-hosting/backups",
+          "web-hosting/imunify360",
           "web-hosting/resource-limits",
           {
             "group": "CDN",
             "pages": [
+              "web-hosting/cdn/overview",
               "web-hosting/cdn/setup",
-              "web-hosting/cdn/canonical-links"
+              "web-hosting/cdn/purge-cache",
+              "web-hosting/cdn/canonical-links",
+              "web-hosting/cdn/bunny-shield",
+              "web-hosting/cdn/image-optimization"
             ]
           }
         ]
       },
       {
+        "group": "WordPress",
+        "pages": [
+          "wordpress/getting-started",
+          "wordpress/litespeed-cache"
+        ]
+      },
+      {
+        "group": "Email",
+        "pages": [
+          "email/create-account",
+          "email/client-setup",
+          "email/webmail",
+          "email/spam-filtering"
+        ]
+      },
+      {
         "group": "VPS",
         "pages": [
-          "vps/mail-port-restrictions",
+          "vps/getting-started",
           "vps/operating-systems",
+          "vps/firewall",
           "vps/rdns",
-          "vps/custom-iso",
+          "vps/mail-port-restrictions",
           "vps/additional-ips",
-          "vps/backups"
+          "vps/custom-iso",
+          "vps/backups",
+          "vps/managed-vs-unmanaged"
         ]
       },
       {
         "group": "Reseller Hosting",
         "pages": [
-          "reseller-hosting/overview"
+          "reseller-hosting/overview",
+          "reseller-hosting/getting-started",
+          "reseller-hosting/client-accounts",
+          "reseller-hosting/white-label",
+          "reseller-hosting/mailchannels"
         ]
       },
       {
         "group": "Domains",
         "pages": [
-          "domains/overview"
+          "domains/overview",
+          "domains/register",
+          "domains/transfer",
+          "domains/dns-records"
         ]
       },
       {
         "group": "Billing",
         "pages": [
-          "billing/overview"
+          "billing/overview",
+          "billing/payment-methods",
+          "billing/upgrade-downgrade",
+          "billing/cancellations"
         ]
       }
     ],

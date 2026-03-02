@@ -1,0 +1,126 @@
+---
+title: Configure a firewall
+description: How to set up UFW or firewalld on your SpeedyPage VPS to control inbound traffic.
+---
+
+A firewall controls which network traffic is allowed to reach your server. Setting one up should be one of the first things you do after provisioning a new VPS.
+
+This guide covers the two most common Linux firewall tools: **UFW** (Ubuntu and Debian) and **firewalld** (AlmaLinux, Rocky Linux, and CentOS).
+
+<Warning>
+Always allow SSH (port 22) before enabling the firewall. If you enable the firewall without an SSH rule, you will lock yourself out of the server. You can still access the server through the VirtFusion console to fix this, but it's best avoided.
+</Warning>
+
+## Set up UFW (Ubuntu/Debian)
+
+UFW (Uncomplicated Firewall) is the default firewall management tool on Ubuntu and Debian.
+
+<Steps>
+  <Step title="Allow SSH">
+    ```bash
+    sudo ufw allow 22/tcp
+    ```
+  </Step>
+  <Step title="Allow HTTP and HTTPS">
+    ```bash
+    sudo ufw allow 80/tcp
+    sudo ufw allow 443/tcp
+    ```
+  </Step>
+  <Step title="Set the default policy">
+    Deny all other incoming traffic and allow all outgoing traffic:
+
+    ```bash
+    sudo ufw default deny incoming
+    sudo ufw default allow outgoing
+    ```
+  </Step>
+  <Step title="Enable the firewall">
+    ```bash
+    sudo ufw enable
+    ```
+  </Step>
+  <Step title="Verify the rules">
+    ```bash
+    sudo ufw status verbose
+    ```
+  </Step>
+</Steps>
+
+## Set up firewalld (AlmaLinux/Rocky/CentOS)
+
+firewalld is the default firewall management tool on RHEL-based distributions.
+
+<Steps>
+  <Step title="Start and enable firewalld">
+    ```bash
+    sudo systemctl start firewalld
+    sudo systemctl enable firewalld
+    ```
+  </Step>
+  <Step title="Allow SSH, HTTP, and HTTPS">
+    ```bash
+    sudo firewall-cmd --permanent --add-service=ssh
+    sudo firewall-cmd --permanent --add-service=http
+    sudo firewall-cmd --permanent --add-service=https
+    ```
+  </Step>
+  <Step title="Reload the configuration">
+    ```bash
+    sudo firewall-cmd --reload
+    ```
+  </Step>
+  <Step title="Verify the rules">
+    ```bash
+    sudo firewall-cmd --list-all
+    ```
+  </Step>
+</Steps>
+
+## Quick reference
+
+<CodeGroup>
+```bash UFW (Ubuntu/Debian)
+# Allow SSH, HTTP, HTTPS and enable
+sudo ufw allow 22/tcp
+sudo ufw allow 80/tcp
+sudo ufw allow 443/tcp
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+sudo ufw enable
+```
+
+```bash firewalld (AlmaLinux/Rocky/CentOS)
+# Start firewalld and allow SSH, HTTP, HTTPS
+sudo systemctl start firewalld
+sudo systemctl enable firewalld
+sudo firewall-cmd --permanent --add-service=ssh
+sudo firewall-cmd --permanent --add-service=http
+sudo firewall-cmd --permanent --add-service=https
+sudo firewall-cmd --reload
+```
+</CodeGroup>
+
+## Allow additional ports
+
+To open other ports for your applications:
+
+<CodeGroup>
+```bash UFW
+# Example: allow MySQL (3306) from a specific IP only
+sudo ufw allow from 203.0.113.10 to any port 3306
+
+# Example: allow a custom application port
+sudo ufw allow 8080/tcp
+```
+
+```bash firewalld
+# Example: allow a custom port
+sudo firewall-cmd --permanent --add-port=8080/tcp
+sudo firewall-cmd --reload
+```
+</CodeGroup>
+
+<Tip>
+VirtFusion also provides network-level firewall options for your VPS. You can configure these from the **Network** tab in the VirtFusion dashboard as an additional layer alongside your OS-level firewall.
+</Tip>

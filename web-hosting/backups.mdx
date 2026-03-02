@@ -1,0 +1,54 @@
+---
+title: Web hosting backups
+description: How SpeedyPage web hosting backups work, what's included, retention policy, and how to restore files and databases.
+---
+
+SpeedyPage Web Hosting includes automated daily backups on all plans. Backups are stored off-site at a separate facility from your hosting server.
+
+## What's included
+
+Every daily backup captures:
+
+- **Files** — all files in your home directory, including website files, email data, and configuration files
+- **Databases** — all MySQL databases associated with your cPanel account
+- **Email** — email accounts, messages, forwarders, and filters
+
+## Retention
+
+Backups are retained for **31 days**. A new backup is created each day, and backups older than 31 days are automatically removed.
+
+## Restore from a backup
+
+1. Log in to cPanel through your [client area](https://my.speedypage.com) or by visiting `yourdomain.com/cpanel`
+2. Go to the **Files** section and click **JetBackup**
+3. Choose what you want to restore:
+   - **Full Account Restore** — restores your entire account to a previous state
+   - **File Backups** — restore individual files or directories
+   - **Database Backups** — restore a specific MySQL database
+   - **Email Backups** — restore email accounts and messages
+
+### Restore individual files
+
+1. In JetBackup, click **File Backups**
+2. Select the backup date you want to restore from
+3. Browse to the file or directory you need
+4. Select the items and click **Restore** or **Download**
+
+### Restore a database
+
+1. In JetBackup, click **Database Backups**
+2. Select the backup date
+3. Choose the database to restore
+4. Click **Restore**
+
+<Warning>
+Restoring a database replaces the current database with the backup version. Any changes made after the backup date will be lost.
+</Warning>
+
+<Note>
+Web hosting backups are managed separately from VPS backups. If you have a VPS, see [VPS backups](/vps/backups) for details on that service.
+</Note>
+
+<Tip>
+While SpeedyPage backups provide reliable protection, maintaining your own independent backups is always recommended as an additional safety measure.
+</Tip>

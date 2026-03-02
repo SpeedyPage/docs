@@ -1,0 +1,83 @@
+---
+title: Getting started with WHM
+description: Access WHM and learn the key areas for managing your SpeedyPage Reseller Hosting plan.
+---
+
+WHM (Web Host Manager) is the reseller control panel. You use it to create and manage client cPanel accounts, configure hosting packages, and handle DNS and email settings.
+
+## Access WHM
+
+You can access WHM in two ways.
+
+### Through the client area
+
+<Steps>
+  <Step title="Log in to the client area">
+    Go to [my.speedypage.com](https://my.speedypage.com) and log in with your account credentials.
+  </Step>
+  <Step title="Open your reseller service">
+    Click **Services** and select your Reseller Hosting plan.
+  </Step>
+  <Step title="Log in to WHM">
+    Click the **Log in to WHM** button. This opens WHM in a new tab without requiring a separate username and password.
+  </Step>
+</Steps>
+
+### Direct URL
+
+You can access WHM directly by visiting:
+
+```text
+yourdomain.com/whm
+```
+
+Replace `yourdomain.com` with your actual domain name. Log in with the WHM username and password from your welcome email.
+
+## Key areas in WHM
+
+### Account Functions
+
+This is where you create and manage your clients' cPanel accounts. Key options:
+
+- **Create a New Account** — set up a new cPanel account for a client
+- **List Accounts** — view all accounts on your reseller plan
+- **Suspend/Unsuspend an Account** — temporarily disable or re-enable access
+- **Terminate an Account** — permanently remove a client account
+
+### Packages
+
+Packages define the resource limits and features for client accounts. Before creating client accounts, set up your hosting packages:
+
+- **Add a Package** — define storage, bandwidth, email accounts, and other limits
+- **Edit a Package** — modify an existing package's resources
+- **Delete a Package** — remove a package you no longer need
+
+<Tip>
+Create your hosting packages before creating client accounts. When you create an account, you assign it a package that determines its resource limits.
+</Tip>
+
+### DNS Functions
+
+Manage DNS zones for domains on your reseller account:
+
+- **Add a DNS Zone** — create DNS records for a new domain
+- **Edit a DNS Zone** — modify existing DNS records
+- **Delete a DNS Zone** — remove a domain's DNS records
+
+### Email
+
+Configure email settings for accounts on your reseller plan, including email routing and authentication records.
+
+## Plan limits
+
+Each Reseller Hosting tier has different account and storage limits:
+
+| Plan | cPanel accounts | NVMe SSD storage |
+| --- | --- | --- |
+| Starter | 25 | 40 GB |
+| Premium | 50 | 100 GB |
+| Enterprise | 100 | 250 GB |
+
+<Note>
+These limits apply to your entire reseller account. You control how resources are distributed across your clients through the packages you create in WHM.
+</Note>
