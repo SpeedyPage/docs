@@ -1,0 +1,37 @@
+---
+title: VPS backups
+description: How SpeedyPage VPS backups work, including scheduling, retention, pricing, and important limitations.
+---
+
+SpeedyPage offers automated off-site backups for VPS servers. Backups are stored at a separate facility from your server instance.
+
+## Availability and pricing
+
+VPS backups are currently available in **London** and **Amsterdam**, with more locations planned. The cost is **20% of your VPS base price** per month with no additional fees.
+
+## Scheduling
+
+You can configure backups to run on a schedule that suits your needs:
+
+- Daily
+- Bi-weekly
+- Weekly
+- Monthly
+
+On-demand backups are also available with customisable timing.
+
+## Retention
+
+The system keeps **3 backup versions** at a time. When a new backup is created, the oldest version is automatically removed.
+
+## Restoring from a backup
+
+Restores replace the entire server filesystem and content. Restoring individual files from a backup is not supported — it's an all-or-nothing process.
+
+<Warning>
+Backups capture a filesystem snapshot at the time of execution. If your server is running when the backup is taken, restoring is similar to recovering from an unexpected shutdown. Active databases should be handled separately — for MySQL, set up a scheduled cron job to run `mysqldump` before the backup window.
+</Warning>
+
+<Warning>
+SpeedyPage cannot guarantee that every backup will be complete or available for restoration, and does not accept liability for data loss. Always maintain your own independent backups in addition to this service.
+</Warning>

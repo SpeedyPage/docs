@@ -1,0 +1,30 @@
+---
+title: Mail port restrictions
+description: Why outbound mail ports are restricted on SpeedyPage VPS servers and how to request access.
+---
+
+SpeedyPage restricts outbound mail ports on all VPS servers to prevent spam and protect the reputation of our IP address ranges. The following ports are blocked by default:
+
+| Port | Protocol |
+| --- | --- |
+| 25 | SMTP — standard email sending |
+| 465 | SMTPS — SMTP over SSL/TLS |
+| 587 | Submission — email submission (RFC 6409) |
+| 2525 | Alternative SMTP |
+
+## Why these ports are restricted
+
+- **Spam prevention** — blocks unauthorised bulk email from newly provisioned servers
+- **IP reputation** — protects deliverability for all customers on the network
+- **Security** — reduces the risk of compromised servers being used for malware distribution
+
+## Request access
+
+If you have a legitimate need to send email from your VPS:
+
+1. Log in to your [client area](https://my.speedypage.com) and go to your VPS service
+2. Scroll to the **SMTP Port Access** section
+3. Describe your use case and the reason you need access
+4. Submit the request and wait for review
+
+Requests are reviewed individually. You'll receive a response with either approval or further questions about your setup.

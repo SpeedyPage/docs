@@ -5,3 +5,7 @@
 # Draft content
 drafts/
 *.draft.mdx
+
+# Project files
+CLAUDE.md
+AGENTS.md

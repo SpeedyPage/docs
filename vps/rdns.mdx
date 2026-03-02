@@ -1,0 +1,19 @@
+---
+title: Configure rDNS records
+description: How to set up reverse DNS (rDNS) records for your SpeedyPage VPS IP addresses.
+---
+
+Reverse DNS (rDNS) maps an IP address back to a hostname — the opposite of a standard DNS lookup. rDNS is commonly required for mail servers, as many receiving servers reject email from IPs without valid reverse DNS.
+
+## Prerequisites
+
+Before setting rDNS, you must create a forward DNS record (A or AAAA) pointing your hostname to the server's IP address. rDNS will not work without a matching forward record.
+
+## Set up rDNS
+
+1. Log in to your [client area](https://my.speedypage.com) and open your VPS service
+2. Click **Manage** on the server you want to configure
+3. Go to the **Network** tab
+4. Find your IP address in the list and click **Reverse DNS**
+5. Enter the hostname you want the IP to resolve to
+6. Click **Update** to save

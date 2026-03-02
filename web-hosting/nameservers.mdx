@@ -1,0 +1,21 @@
+---
+title: Anycast nameservers
+description: SpeedyPage's anycast nameservers and how they route DNS traffic to the nearest server for faster performance.
+---
+
+SpeedyPage uses anycast DNS across all hosting services. Point your domain to these nameservers:
+
+| Nameserver | Hostname |
+| --- | --- |
+| Primary | `ns1.speedy.page` |
+| Secondary | `ns2.speedy.page` |
+
+These nameservers are the same for all SpeedyPage products — Web Hosting, WordPress Hosting, and Reseller Hosting.
+
+## How anycast DNS works
+
+With anycast routing, the same IP address is announced from multiple data center locations. When a DNS query is made, it's automatically routed to the nearest server. This provides three key benefits:
+
+- **Lower latency** — users are always routed to the closest server, reducing DNS lookup times
+- **Automatic failover** — if a server goes down, traffic is rerouted to the next closest location
+- **Traffic distribution** — the distributed architecture maintains consistent performance during high-traffic periods

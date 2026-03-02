@@ -1,0 +1,38 @@
+---
+title: Change your PHP version and extensions
+description: How to switch PHP versions, enable or disable extensions, and adjust PHP settings in cPanel.
+---
+
+SpeedyPage uses Hardened PHP, which means vulnerabilities in older unsupported PHP versions are fixed and patched. This allows you to run legacy applications on older PHP versions without the usual security risks.
+
+## Change your PHP version
+
+1. Log in to cPanel through your [client area](https://my.speedypage.com) or by visiting `yourdomain.com/cpanel`
+2. Go to the **Software** section and click **Select PHP Version**
+3. Click the current version number to open the dropdown
+4. Select the version you need and click **Set as Current**
+
+<Warning>
+Newer PHP versions may cause compatibility issues with some applications. Test your site after switching versions.
+</Warning>
+
+## Manage PHP extensions
+
+1. In the PHP Selector, open the **Extensions** tab
+2. Use the checkboxes to enable or disable individual PHP modules
+3. Click **Save** to apply your changes
+
+## Adjust PHP settings
+
+Open the **Options** tab in the PHP Selector to configure common settings:
+
+| Setting | What it controls |
+| --- | --- |
+| `memory_limit` | Maximum memory a script can use |
+| `post_max_size` | Maximum size of POST data |
+| `upload_max_filesize` | Maximum file upload size |
+| `disabled_functions` | Functions blocked from execution |
+
+<Tip>
+When increasing the maximum file upload size, adjust both `upload_max_filesize` and `post_max_size`. The `post_max_size` value should be equal to or larger than `upload_max_filesize`.
+</Tip>

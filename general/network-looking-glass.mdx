@@ -1,0 +1,34 @@
+---
+title: Network looking glass and test files
+description: Use SpeedyPage's looking glass tools and test files to run network diagnostics and measure download speeds from any of our seven data center locations.
+---
+
+A looking glass provides a way to view routing data and perform network diagnostics through a web-based interface. You can use these tools to troubleshoot connectivity issues, check routing paths, and test download speeds to each of our data center locations.
+
+## Looking glass locations
+
+| Location | Looking glass |
+| --- | --- |
+| London, UK | [uk.lg.speedypage.com](https://uk.lg.speedypage.com) |
+| Ashburn, USA | [ash.lg.speedypage.com](https://ash.lg.speedypage.com) |
+| Los Angeles, USA | [la.lg.speedypage.com](https://la.lg.speedypage.com) |
+| Amsterdam, NL | [ams.lg.speedypage.com](https://ams.lg.speedypage.com) |
+| Singapore, SG | [sg.lg.speedypage.com](https://sg.lg.speedypage.com) |
+| Tokyo, JP | [tyo.lg.speedypage.com](https://tyo.lg.speedypage.com) |
+| Sydney, AU | [syd.lg.speedypage.com](https://syd.lg.speedypage.com) |
+
+## Test files
+
+Each location provides downloadable test files so you can measure real-world transfer speeds. Replace `{location}` with the subdomain from the table above (e.g. `uk`, `ash`, `la`).
+
+| Size | URL pattern |
+| --- | --- |
+| 100 MB | `https://{location}.lg.speedypage.com/100MB.test` |
+| 1 GB | `https://{location}.lg.speedypage.com/1GB.test` |
+| 5 GB | `https://{location}.lg.speedypage.com/5GB.test` |
+
+For example, to test download speed from London:
+
+```
+https://uk.lg.speedypage.com/100MB.test
+```

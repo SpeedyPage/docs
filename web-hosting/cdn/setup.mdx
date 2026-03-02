@@ -1,0 +1,31 @@
+---
+title: Set up BunnyCDN
+description: Activate and configure BunnyCDN on your SpeedyPage hosting plan for faster global content delivery.
+---
+
+SpeedyPage includes BunnyCDN, Bunny Shield, and Bunny Optimizer on selected hosting plans. Once activated, your site's static content is cached and served from Bunny's global network for faster load times.
+
+## Activate the CDN
+
+1. Log in to cPanel through your [client area](https://my.speedypage.com) or by visiting `yourdomain.com/cpanel`
+2. Go to the **Domains** section and find the **bunny.net** icon
+3. Select your domain and click **Set Up With bunny.net**
+
+## Update your nameservers
+
+After activating BunnyCDN, update your domain's nameservers at your registrar to:
+
+| Nameserver | Hostname |
+| --- | --- |
+| Primary | `ns1.speedy.page` |
+| Secondary | `ns2.speedy.page` |
+
+Click **Finish Setup** once the nameservers are updated.
+
+<Note>
+DNS changes may take some time to propagate globally, but your site will remain online during this process.
+</Note>
+
+## Configure CDN settings
+
+The default configuration works for most sites with no changes needed. If you need to adjust CDN settings or purge the cache, you can do so through the **bunny.net** section in cPanel.

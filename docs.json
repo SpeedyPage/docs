@@ -1,84 +1,83 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "SpeedyPage Docs",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#2563EB",
+    "light": "#3B82F6",
+    "dark": "#1D4ED8"
   },
   "favicon": "/favicon.svg",
   "navigation": {
-    "tabs": [
+    "groups": [
       {
-        "tab": "Guides",
-        "groups": [
+        "group": "Getting started",
+        "pages": [
+          "index"
+        ]
+      },
+      {
+        "group": "General",
+        "pages": [
+          "general/network-looking-glass"
+        ]
+      },
+      {
+        "group": "Web Hosting",
+        "pages": [
+          "web-hosting/nameservers",
+          "web-hosting/php-version",
+          "web-hosting/resource-limits",
           {
-            "group": "Getting started",
+            "group": "CDN",
             "pages": [
-              "index",
-              "quickstart",
-              "development"
-            ]
-          },
-          {
-            "group": "Customization",
-            "pages": [
-              "essentials/settings",
-              "essentials/navigation"
-            ]
-          },
-          {
-            "group": "Writing content",
-            "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
-            ]
-          },
-          {
-            "group": "AI tools",
-            "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
+              "web-hosting/cdn/setup",
+              "web-hosting/cdn/canonical-links"
             ]
           }
         ]
       },
       {
-        "tab": "API reference",
-        "groups": [
-          {
-            "group": "API documentation",
-            "pages": [
-              "api-reference/introduction"
-            ]
-          },
-          {
-            "group": "Endpoint examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
-            ]
-          }
+        "group": "VPS",
+        "pages": [
+          "vps/mail-port-restrictions",
+          "vps/operating-systems",
+          "vps/rdns",
+          "vps/custom-iso",
+          "vps/additional-ips",
+          "vps/backups"
+        ]
+      },
+      {
+        "group": "Reseller Hosting",
+        "pages": [
+          "reseller-hosting/overview"
+        ]
+      },
+      {
+        "group": "Domains",
+        "pages": [
+          "domains/overview"
+        ]
+      },
+      {
+        "group": "Billing",
+        "pages": [
+          "billing/overview"
         ]
       }
     ],
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
+          "anchor": "SpeedyPage",
+          "href": "https://speedypage.com",
+          "icon": "globe"
         },
         {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
+          "anchor": "Support",
+          "href": "https://speedypage.com/contact",
+          "icon": "headset"
         }
       ]
     }
@@ -91,32 +90,19 @@
     "links": [
       {
         "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "href": "https://speedypage.com/contact"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Client Area",
+      "href": "https://my.speedypage.com"
     }
-  },
-  "contextual": {
-    "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "x": "https://x.com/speedypage",
+      "github": "https://github.com/speedypage"
     }
   }
 }
